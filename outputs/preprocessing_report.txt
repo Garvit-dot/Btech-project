@@ -1,0 +1,9 @@
+==================================================
+PREPROCESSING REPORT
+==================================================
+
+Total Images            : 1106
+RGB Converted           : 83
+Already Grayscale       : 1023
+Failed Images           : 0
+Output Directory        : data\processed\images

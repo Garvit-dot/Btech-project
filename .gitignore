@@ -1,0 +1,20 @@
+# Virtual Environment
+.venv/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Dataset (do not push)
+data/raw/images/
+data/processed/images/
+
+# Logs
+*.log
