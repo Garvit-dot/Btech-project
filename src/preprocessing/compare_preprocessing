@@ -1,0 +1,39 @@
+import random
+from pathlib import Path
+
+from PIL import Image, ImageFilter
+import matplotlib.pyplot as plt
+
+RAW_DIR = Path("data/raw/images")
+
+SUPPORTED = {".bmp", ".jpg", ".jpeg", ".png", ".tif", ".tiff"}
+
+images = [p for p in RAW_DIR.iterdir() if p.suffix.lower() in SUPPORTED]
+
+sample = random.sample(images, min(4, len(images)))
+
+fig, axes = plt.subplots(len(sample), 2, figsize=(8, 12))
+
+if len(sample) == 1:
+    axes = [axes]
+
+for i, img_path in enumerate(sample):
+
+    img = Image.open(img_path).convert("L")
+
+    filtered = img.filter(ImageFilter.MedianFilter(size=3))
+
+    axes[i][0].imshow(img, cmap="gray")
+    axes[i][0].set_title("Original")
+    axes[i][0].axis("off")
+
+    axes[i][1].imshow(filtered, cmap="gray")
+    axes[i][1].set_title("Median Filter")
+    axes[i][1].axis("off")
+
+plt.tight_layout()
+
+Path("outputs").mkdir(exist_ok=True)
+
+plt.savefig("outputs/before_after_preprocessing.png", dpi=300)
+plt.show()
