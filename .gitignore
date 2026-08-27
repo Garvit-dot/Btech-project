@@ -12,9 +12,17 @@ __pycache__/
 .DS_Store
 Thumbs.db
 
-# Dataset (do not push)
-data/raw/images/
-data/processed/images/
+# Dataset and annotations
+data/raw/
+data/processed/
+data/annotations/
+data/yolo_dataset/
+
+# Trained models
+models/
+
+# Training outputs
+runs/
 
 # Logs
 *.log
