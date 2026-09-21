@@ -5,9 +5,6 @@ from pathlib import Path
 from ultralytics import YOLO
 
 
-# ============================================================
-# CONFIGURATION
-# ============================================================
 
 RANDOM_SEED = 42
 TRAIN_SPLIT = 0.80
@@ -421,9 +418,6 @@ def create_dataset_yaml(classes):
     print(
         f"dataset.yaml created:\n{DATASET_YAML}"
     )
-# ============================================================
-# CHECK DATASET
-# ============================================================
 
 def check_dataset():
 

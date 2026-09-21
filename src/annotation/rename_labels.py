@@ -1,19 +1,11 @@
 import json
 from pathlib import Path
 
-# ============================================================
-# Paths
-# ============================================================
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 LABELME_DIR = PROJECT_ROOT / "data" / "annotations" / "labelme_json"
 
-# ============================================================
-# Rename Mapping
-# Left  = Incorrect label
-# Right = Correct label
-# ============================================================
 
 LABEL_MAPPING = {
     "healingsocket": "healing_socket",
@@ -21,9 +13,6 @@ LABEL_MAPPING = {
     "periaple_legion": "periapical_lesion",
 }
 
-# ============================================================
-# Process JSON Files
-# ============================================================
 
 json_files = sorted(LABELME_DIR.glob("*.json"))
 
